@@ -46,6 +46,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /home/ec2-user/alta
-            docker-compose down
+            # docker compose down
             docker pull aditnugroho/alta:latest
-            docker-compose up -d
+            docker run -d -p 1323:1323 aditnugroho/alta:latest
+            # docker compose up -d
